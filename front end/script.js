@@ -6,7 +6,7 @@ ScrollReveal().reveal('.menu-item', {
     interval: 200
 });
 
-ScrollReveal().reveal('header img', {
+ScrollReveal().reveal('header .header-content', {
     delay: 500,
     distance: '50px',
     origin: 'top'
@@ -18,16 +18,8 @@ ScrollReveal().reveal('#location', {
     origin: 'left'
 });
 
-ScrollReveal().reveal('footer', {
-    delay: 500,
-    distance: '50px',
-    origin: 'bottom'
-});
-
-// Chatbot toggle functionality
-const chatIcon = document.getElementById('chatIcon');
-const chatbotContainer = document.getElementById('chatbotContainer');
-
-chatIcon.addEventListener('click', () => {
+// Chatbot toggle
+document.getElementById('chatIcon').addEventListener('click', function() {
+    const chatbotContainer = document.getElementById('chatbotContainer');
     chatbotContainer.style.display = chatbotContainer.style.display === 'none' ? 'block' : 'none';
 });

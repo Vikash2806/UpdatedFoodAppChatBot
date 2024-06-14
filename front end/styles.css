@@ -17,8 +17,6 @@ body {
 header img {
     width: 100%;
     height: auto;
-    animation: fadeIn 1.5s ease-in-out;
-    background-color: #111;
 }
 
 #menu {
@@ -28,7 +26,6 @@ header img {
     max-width: 1000px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    animation: fadeIn 1.5s ease-in-out;
 }
 
 #menu h2 {
@@ -38,14 +35,13 @@ header img {
     color: rgb(247, 202, 4); /* Yellow */
 }
 
+
 .menu-container {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-    padding-bottom: 20px;
 }
-
 
 .menu-item {
     flex: 1 1 calc(50% - 2rem);
@@ -56,7 +52,6 @@ header img {
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
     position: relative;
-    animation: slideInUp 1.5s ease-in-out;
 }
 
 .menu-item img {
@@ -89,11 +84,9 @@ header img {
 
 #location {
     text-align: center;
-    padding:0%;
+    padding: 2rem;
     background-color: #333; /* Darkest grey */
     color: rgb(249, 216, 0); /* Yellow */
-    animation: fadeIn 2s ease-in-out;
-    margin-top: 2rem;
 }
 
 #location h2 {
@@ -106,41 +99,21 @@ footer {
     padding: 1rem;
     background-color: #222; /* Dark grey */
     color: #ddd;
-    animation: fadeIn 2.5s ease-in-out;
-    margin-top: 2rem;
 }
 
 footer p {
     font-size: 1rem;
 }
+/* Existing CSS */
 
-#chatIconContainer {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#chatIcon {
-    width: 60px;
-    height: 60px;
-    cursor: pointer;
-    transition: transform 0.3s;
-    border-radius: 50%;
-    background-color: #fff;
-    padding: 10px;
-}
-
-#chatIcon:hover {
-    transform: scale(1.1);
-}
+/* Existing CSS */
 
 #chatbotContainer {
     position: fixed;
-    bottom: 90px;
+    bottom: 80px; /* Slightly above the chat icon */
     right: 20px;
     z-index: 1000;
-    display: none;
+    display: none; /* Hide the chatbot by default */
 }
 
 #draggableChatbot {
@@ -158,21 +131,22 @@ footer p {
     transform: scale(1.05);
 }
 
-/* Keyframes for animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+#chatIcon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above the chatbot container */
+    border-radius: 50%; /* Make the icon round */
+    overflow: hidden; /* Ensure the image doesn't overflow the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes slideInUp {
-    from {
-        transform: translateY(100px);
-    }
-    to {
-        transform: translateY(0);
-    }
+#chatIcon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
 }
+
